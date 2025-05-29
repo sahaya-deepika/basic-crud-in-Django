@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Patient Details</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* light gray */
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label, input, textarea, select {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Enter Patient Details</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
